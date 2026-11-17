@@ -1,0 +1,15 @@
+
+Create the Virtual Environment
+python -m venv .venv
+
+Allow Script Execution in PowerShell
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
+
+Activate the Virtual Environment
+.\.venv\Scripts\Activate
+
+Install Pytest and Playwright
+pip install pytest playwright
+
+Run Your Test File
+pytest .\pytest_basic.py
