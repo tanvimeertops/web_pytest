@@ -1,4 +1,4 @@
-import pytest
+import pytest  # type: ignore[import-not-found]
 
 def is_even(num):
     return num % 2 == 0

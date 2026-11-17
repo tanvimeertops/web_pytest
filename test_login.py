@@ -1,6 +1,6 @@
 import pytest
 from playwright.sync_api import sync_playwright
-
+import time
 @pytest.fixture
 def setup_browser():
     print("Setting up the browser for testing...")
@@ -18,9 +18,12 @@ def setup_browser():
 
 def test_login(setup_browser):
     page = setup_browser
-    page.fill("#username", "testuser")
-    page.fill("#password", "password123")
-    page.click("#login-button")
+    page.locator("[data-test=\"username\"]").fill("standard_user")
+    page.locator("[data-test=\"password\"]").fill("secret_sauce")
+    time.sleep(2)
+    page.click("[data-test=\"login-button\"]")
+    time.sleep(5)
 
-    # Add assertions to verify successful login
-    assert page.url == "https://example.com/dashboard"
+    assert page.url=="https://www.saucedemo.com/inventory.html","Login Failed"
+
+    print("\n--- Test Completed ---")
