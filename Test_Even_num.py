@@ -7,7 +7,7 @@ def is_even(num):
 @pytest.mark.parametrize("num, expected", [
     (2,True),
     (3,False),  
-    (4,True),
+    (4,False),
     (5,False)
 ])
 def test_is_even(num, expected):

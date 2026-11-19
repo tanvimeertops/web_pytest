@@ -18,8 +18,17 @@ class TestPytestAllAnnotation:
     def test1(self):
         print("Test 1")
 
+    feature_available=True
+    @pytest.mark.skipif(not feature_available,reason="feature not available")
+    def test4(self):
+        print("test 3")
 
     def test2(self):
         print("TEst 2")
 
+    @pytest.mark.smoke
+    def test3(self):
+        print("smoke test")
+
+    
     
